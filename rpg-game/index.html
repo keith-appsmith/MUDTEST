@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idle RPG</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>IDLE RPG</h2>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-backpack"></i> Inventory</a></li>
+                    <li><a href="#"><i class="fas fa-hammer"></i> Crafting</a></li>
+                    <li><a href="#"><i class="fas fa-scroll"></i> Quests</a></li>
+                    <li><a href="#"><i class="fas fa-store"></i> Auction House</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-toggle">
+                <button id="sidebar-toggle-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Status Bar -->
+            <header class="status-bar">
+                <div class="player-info">
+                    <div class="player-name">Player: <span id="player-name">Adventurer</span></div>
+                    <div class="player-level">Level: <span id="player-level">1</span></div>
+                </div>
+                <div class="player-stats">
+                    <div class="stat xp-bar">
+                        <span class="stat-label">XP:</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="xp-progress" style="width: 25%"></div>
+                            <span class="progress-text">250 / 1000</span>
+                        </div>
+                    </div>
+                    <div class="stat gold">
+                        <span class="stat-label">Gold:</span>
+                        <span class="stat-value" id="player-gold">100</span>
+                    </div>
+                    <div class="stat energy">
+                        <span class="stat-label">Energy:</span>
+                        <div class="progress-container">
+                            <div class="progress-bar energy-bar" id="energy-progress" style="width: 80%"></div>
+                            <span class="progress-text">80 / 100</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Game Content Area -->
+            <div class="game-content">
+                <div class="panel-container">
+                    <!-- Terminal Interface -->
+                    <div class="terminal-panel">
+                        <div class="terminal-header">
+                            <h3>Command Terminal</h3>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-output" id="game-log">
+                                <div class="log-entry system-message">Welcome to Idle RPG. Type 'help' for a list of commands.</div>
+                                <div class="log-entry success-message">You have logged in successfully.</div>
+                                <div class="log-entry">You are in the town square. There are several shops and NPCs around.</div>
+                                <div class="log-entry warning-message">Your energy is at 80%. Consider resting soon.</div>
+                                <div class="log-entry">A merchant approaches you, offering rare items for sale.</div>
+                                <div class="log-entry error-message">You don't have enough gold to purchase that item.</div>
+                                <div class="log-entry command">> inventory</div>
+                                <div class="log-entry">Your inventory contains: Health Potion (3), Iron Ore (5), Wooden Shield (1)</div>
+                                <div class="log-entry command">> mine iron_ore</div>
+                                <div class="log-entry success-message">You successfully mined iron ore! (+1 Iron Ore)</div>
+                            </div>
+                            <div class="terminal-input-container">
+                                <span class="prompt">&gt;</span>
+                                <input type="text" id="command-input" class="terminal-input" placeholder="Enter command...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Panel (for future use) -->
+                    <div class="info-panel">
+                        <div class="panel-header">
+                            <h3>Game Info</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="info-section">
+                                <h4>Current Quest</h4>
+                                <p>Gather 10 Iron Ore for the Blacksmith</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 50%"></div>
+                                    <span class="progress-text">5 / 10</span>
+                                </div>
+                            </div>
+                            <div class="info-section">
+                                <h4>Active Effects</h4>
+                                <ul class="effects-list">
+                                    <li><span class="effect-name">Mining Boost</span> <span class="effect-time">5:23</span></li>
+                                    <li><span class="effect-name">XP Bonus</span> <span class="effect-time">12:45</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
